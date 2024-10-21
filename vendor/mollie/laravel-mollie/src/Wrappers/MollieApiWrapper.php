@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (c) 2016, Mollie B.V.
  * All rights reserved.
@@ -55,8 +56,6 @@ class MollieApiWrapper
     /**
      * MollieApiWrapper constructor.
      *
-     * @param  Repository  $config
-     * @param  MollieApiClient  $client
      * @return void
      *
      * @throws \Mollie\Api\Exceptions\ApiException
@@ -118,7 +117,6 @@ class MollieApiWrapper
     }
 
     /**
-     * @param $version_string
      * @return \Mollie\Laravel\Wrappers\MollieApiWrapper
      */
     public function addVersionString($version_string)
@@ -166,6 +164,14 @@ class MollieApiWrapper
     public function paymentLinks()
     {
         return $this->client->paymentLinks;
+    }
+
+    /**
+     * @return \Mollie\Api\Endpoints\TerminalEndpoint
+     */
+    public function terminals()
+    {
+        return $this->client->terminals;
     }
 
     /**
@@ -377,6 +383,14 @@ class MollieApiWrapper
     }
 
     /**
+     * @return \Mollie\Api\Endpoints\ClientLinkEndpoint
+     */
+    public function clientLinks()
+    {
+        return $this->client->clientLinks;
+    }
+
+    /**
      * @return \Mollie\Api\Endpoints\OrganizationPartnerEndpoint
      */
     public function organizationPartners()
@@ -402,6 +416,26 @@ class MollieApiWrapper
     public function disableDebugging()
     {
         $this->client->disableDebugging();
+    }
+
+    public function setIdempotencyKey(string $key)
+    {
+        return $this->client->setIdempotencyKey($key);
+    }
+
+    public function resetIdempotencyKey()
+    {
+        return $this->client->resetIdempotencyKey();
+    }
+
+    public function setIdempotencyKeyGenerator($generator)
+    {
+        return $this->client->setIdempotencyKeyGenerator($generator);
+    }
+
+    public function clearIdempotencyKeyGenerator()
+    {
+        return $this->client->clearIdempotencyKeyGenerator();
     }
 
     /**
