@@ -224,7 +224,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav m-auto">
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         @php
                             if($setting->selected_theme==1){
                                $route = route('home',['theme' => 1]);
@@ -248,11 +248,23 @@
                             <li><a href="{{ route('home',['theme' => 3]) }}">{{__('user.Home three')}}</a></li>
                         </ul>
                         @endif
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('products') }}">{{__('user.Products')}}</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('products') }}">{{__('user.Uikits')}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('products') }}">{{__('user.Wireframekits')}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('products') }}">{{__('user.Icons')}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('products') }}">{{__('user.Illustrations')}}</a>
+                    </li>
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="javascript:;">{{__('user.Pages')}} <i class="far fa-chevron-down"></i></a>
                         <ul class="wsus__droap_menu">
 
@@ -289,18 +301,18 @@
                             @endforeach
 
                         </ul>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('blogs') }}">{{__('user.Blog')}}</a>
                     </li>
 
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link {{ Route::is('about-us') ? 'active':'' }}" href="{{ route('about-us') }}">{{__('user.About Us')}}</a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('contact-us') }}">{{__('user.Contact')}}</a>
-                    </li>
+                    </li> --}}
                 </ul>
 
                 <ul class="right_menu d-flex flex-wrap">
